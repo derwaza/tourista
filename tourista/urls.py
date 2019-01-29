@@ -32,10 +32,12 @@ urlpatterns = [
          views.destination_update, name='destination-update'),
     path('destinations/delete/<int:destination_id>/',
          views.destination_delete, name='destination-delete'),
+
+    path('destinations/list/aboutus', views.about_us, name='about-us'),
 ]
 
 if settings.DEBUG:
     '''Uncomment the next line to include your static files'''
-    # urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)

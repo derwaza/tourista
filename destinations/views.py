@@ -49,3 +49,10 @@ def destination_delete(request, destination_id):
     destination_obj = Destination.objects.get(id=destination_id)
     destination_obj.delete()
     return redirect('destination-list')
+
+
+def about_us(request):
+    context = {
+        'msg':'We offer tours and stuff...'
+    }
+    return render(request, 'about-us', context)
